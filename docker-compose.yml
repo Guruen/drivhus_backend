@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  drivhusbackend:
+    image: drivhusbackend
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+      TZ: Europe/Copenhagen
+    ports:
+      - 35001:3000
