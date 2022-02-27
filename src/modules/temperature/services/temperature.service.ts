@@ -15,5 +15,7 @@ export class TemperatureService {
     saveTemp.temperature_water = temp.temperature_water
     this.tempRepo.saveTemperature(saveTemp)
   }
-
+  async getTemperatureData(date: string, period: string): Promise<temperature[]> {
+    return await this.tempRepo.getTemperatureData(date, period)
+  }
 }

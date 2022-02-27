@@ -29,7 +29,7 @@ export class drivhusGateway
   }
 
   @SubscribeMessage('saveTemperature')
-  async saveTemperature(
+  async handleSaveTemperature(
     @MessageBody() currentTemp: currentTemperature,
     ): Promise<void> {
       this.tempService.saveTemperature(currentTemp)
@@ -52,10 +52,11 @@ export class drivhusGateway
 
   async handleConnection(client: Socket, ...args: any[]) {
     console.log(`Client connected: ${client.id}`)
-      
+    console.log(`Client connected: ${client.handshake.address}`)
   }
 
   async handleDisconnect(client: Socket): Promise<void> {
     console.log(`Client disconnected: ${client.id}`);
+    
   }
 }

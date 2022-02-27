@@ -1,6 +1,7 @@
 # compiled output
 /dist
 /node_modules
+*.tar
 
 # Logs
 logs
@@ -38,3 +39,4 @@ lerna-debug.log*
 /config/*
 **/*.env
 *.env
+drivhus.tar
